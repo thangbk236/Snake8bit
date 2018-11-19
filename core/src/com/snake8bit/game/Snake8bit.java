@@ -1,44 +1,37 @@
 package com.snake8bit.game;
+import com.badlogic.gdx.Game;
+import com.snake8bit.game.Assets.GameAsset;
+import com.snake8bit.game.Assets.GameJson;
+import com.snake8bit.game.Screen.MainMenuScreen;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+public class Snake8bit extends Game {
 
-public class Snake8bit extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
+    GameAsset gameAsset;
+    public static PlayServices playservices;
 
-    private PlayServices playservices;
     public Snake8bit(PlayServices playservices) {
         this.playservices = playservices;
     }
+    @Override
+    public void create () {
+        gameAsset = new GameAsset();
+        GameJson.load();
+        this.setScreen(MainMenuScreen.getInstance(this,true));
+    }
 
-	@Override
-	public void create () {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
-	}
+    @Override
+    public void render () {
 
-	@Override
-	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
-	}
+        super.render();
+    }
 
     @Override
     public void resize(int width, int height) {
 
     }
 
-	@Override
-	public void dispose () {
-		batch.dispose();
-		img.dispose();
-	}
+    @Override
+    public void dispose () {
+
+    }
 }

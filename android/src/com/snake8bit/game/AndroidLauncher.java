@@ -40,8 +40,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
-import com.snake8bit.game.Snake8bit;
-
 public class AndroidLauncher extends AndroidApplication implements PlayServices {
 	//----------------------------------------------------------------------------------------------
 	//ADS
