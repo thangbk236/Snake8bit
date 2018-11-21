@@ -2894,17 +2894,18 @@ public final class R {
     public static final int common_open_on_phone=0x7f0a0031;
     public static final int common_signin_button_text=0x7f0a0032;
     public static final int common_signin_button_text_long=0x7f0a0033;
-    public static final int place_autocomplete_clear_button=0x7f0a0034;
-    public static final int place_autocomplete_search_hint=0x7f0a0035;
-    public static final int s1=0x7f0a0036;
-    public static final int s2=0x7f0a0037;
-    public static final int s3=0x7f0a0038;
-    public static final int s4=0x7f0a0039;
-    public static final int s5=0x7f0a003a;
-    public static final int s6=0x7f0a003b;
-    public static final int s7=0x7f0a003c;
-    public static final int search_menu_title=0x7f0a003d;
-    public static final int status_bar_notification_info_overflow=0x7f0a003e;
+    public static final int leaderboard_my_score=0x7f0a0034;
+    public static final int place_autocomplete_clear_button=0x7f0a0035;
+    public static final int place_autocomplete_search_hint=0x7f0a0036;
+    public static final int s1=0x7f0a0037;
+    public static final int s2=0x7f0a0038;
+    public static final int s3=0x7f0a0039;
+    public static final int s4=0x7f0a003a;
+    public static final int s5=0x7f0a003b;
+    public static final int s6=0x7f0a003c;
+    public static final int s7=0x7f0a003d;
+    public static final int search_menu_title=0x7f0a003e;
+    public static final int status_bar_notification_info_overflow=0x7f0a003f;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0b0000;

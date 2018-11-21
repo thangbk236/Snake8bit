@@ -17,6 +17,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.badlogic.gdx.backends.android.AndroidGraphics;
+import com.badlogic.gdx.math.MathUtils;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -65,7 +66,7 @@ public class AndroidLauncher extends AndroidApplication implements PlayServices 
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-        View gameView = initializeForView(new Snake8bit(this), config);
+		View gameView = initializeForView(new Snake8bit(this), config);
 		setupAds();
 		RelativeLayout layout = new RelativeLayout(this);
 		layout.addView(gameView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -360,10 +361,11 @@ public class AndroidLauncher extends AndroidApplication implements PlayServices 
 	//----------------------------------------------------------------------------------------------
 	@Override
 	public void submitScore(final int score){
-		if(IsSignedIn){
+		if(isSignedIn()){
 			// Example
 			//mLeaderboardsClient.submitScore(getString(R.string.leaderboard_my_score), score);
 			// Write code in here
+			mLeaderboardsClient.submitScore(getString(R.string.leaderboard_my_score), score);
 		}
 	}
 
@@ -371,13 +373,13 @@ public class AndroidLauncher extends AndroidApplication implements PlayServices 
 	public void showLeaderBoard() {
 		if(isSignedIn()){
 			// Example
-			/*mLeaderboardsClient.getLeaderboardIntent(getString(R.string.leaderboard_my_score))
+			mLeaderboardsClient.getLeaderboardIntent(getString(R.string.leaderboard_my_score))
 					.addOnSuccessListener(new OnSuccessListener<Intent>() {
 						@Override
 						public void onSuccess(Intent intent) {
 							startActivityForResult(intent, RC_LEADERBOARD_UI);
 						}
-					});*/
+					});
 			// Write code in here
 
 		}
@@ -397,10 +399,30 @@ public class AndroidLauncher extends AndroidApplication implements PlayServices 
 	}
 	@Override
 	public void unlockAchievements(){
-		if (IsSignedIn) {
+		if (isSignedIn()) {
 			// Example
 			// mAchievementsClient.unlock(getString(R.string.achievement_blue_medal));
 			// Write code in here
+		}
+	}
+	@Override
+	public void showAds(){
+		int i = MathUtils.random(1,6);
+		if (i==5) {
+			showBannerAd();
+		}
+		else {
+			if(i==2||i==4){
+				showInterstitialAd(new Runnable() {
+					@Override
+					public void run() {
+						//Gdx.app.exit();
+					}
+				});
+			}
+			else {
+				showRewardedVideoAd();
+			}
 		}
 	}
 }

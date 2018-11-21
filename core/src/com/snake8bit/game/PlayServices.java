@@ -23,5 +23,7 @@ public interface PlayServices {
     public void showAchievements();
     public void showLeaderBoard();
     public void unlockAchievements();
+
+    public void showAds();
     //----------------------------------
 }

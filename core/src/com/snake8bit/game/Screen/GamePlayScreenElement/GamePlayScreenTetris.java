@@ -19,6 +19,7 @@ public class GamePlayScreenTetris {
     private int gameCountDown;
     private boolean gameSoundLatch;
     private boolean playserviceShow;
+    private float timeToShowAds;
     public GamePlayScreenTetrisPlay gamePlayScreenTetrisPlay;
     public GamePlayScreenTetris(Game game){
         GameJson.gameJsonData.HI_SCORE=GameJson.gameData.HiScore;
@@ -28,6 +29,7 @@ public class GamePlayScreenTetris {
         gameCountDown=3;
         gameSoundLatch=false;
         playserviceShow=true;
+        timeToShowAds=0.0f;
         this.game = game;
     }
     public void render(float delta, SpriteBatch batch){
@@ -66,11 +68,13 @@ public class GamePlayScreenTetris {
         }
     }
     public void ProcessStop(float delta, SpriteBatch batch){
-        //gamePlayScreenTetrisPlay.GameDraw(batch);
         gamePlayScreenTetrisPlay.GameDraw(batch);
-        if (playserviceShow){
-            playserviceShow=false;
-            Snake8bit.playservices.showBannerAd();
+        timeToShowAds+=delta;
+        if (timeToShowAds>3.0f){//sau 3s thi cho hien thi ads
+            if (playserviceShow){
+                playserviceShow=false;
+                Snake8bit.playservices.showAds();
+            }
         }
         batch.begin();
         GameAsset.GoodMorningfont.draw(batch,"PAUSE",GameConstant._TO_STR.x,GameConstant._TO_STR.y,0, Align.center,false);
@@ -109,8 +113,8 @@ public class GamePlayScreenTetris {
     public void ProcessGamePlay(float delta, SpriteBatch batch){
         if (!playserviceShow){
             playserviceShow=true;
+            timeToShowAds=0.0f;
             Snake8bit.playservices.hideBannerAd();
-
         }
         gamePlayScreenTetrisPlay.render(delta,batch);
     }

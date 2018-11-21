@@ -80,8 +80,8 @@ public class GameHome {
         if (MainMenuScreen.firstTimePlay){
             GameAsset.GoodMorningfont.draw(batch,"WELCOME",GameConstant._WELCOME_STR.x,GameConstant._WELCOME_STR.y,0, Align.center,false);
             GameAsset.GoodMorningfont.draw(batch,"TO",GameConstant._TO_STR.x,GameConstant._TO_STR.y,0, Align.center,false);
-            GameAsset.GoodMorningfont.draw(batch,"BLOCK PUZZLE",GameConstant._BLOCKPZZLE_STR.x,GameConstant._BLOCKPZZLE_STR.y,0, Align.center,false);
-            GameAsset.GoodMorningfont.draw(batch,"8BIT",GameConstant._8BIT_STR.x,GameConstant._8BIT_STR.y,0, Align.center,false);
+            GameAsset.GoodMorningfont.draw(batch,"SNAKE 8BIT",GameConstant._BLOCKPZZLE_STR.x,GameConstant._BLOCKPZZLE_STR.y,0, Align.center,false);
+            //GameAsset.GoodMorningfont.draw(batch,"8BIT",GameConstant._8BIT_STR.x,GameConstant._8BIT_STR.y,0, Align.center,false);
         }
         else {
             GameAsset.GoodMorningfont.draw(batch,"HI-SCORE",GameConstant._WELCOME_STR.x,GameConstant._WELCOME_STR.y,0, Align.center,false);

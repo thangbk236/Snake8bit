@@ -7,8 +7,8 @@ import com.badlogic.gdx.utils.JsonWriter;
 import com.snake8bit.game.Screen.GamePlayScreenElement.GamePlayScreenTetrisPlay;
 
 public class GameJson {
-    public static FileHandle fileHandle = Gdx.files.local("TetrisJson.json");
-    public static FileHandle fileHandle1 = Gdx.files.local("TetrisJson1.json");
+    public static FileHandle fileHandle = Gdx.files.local("SnakeJson.json");
+    public static FileHandle fileHandle1 = Gdx.files.local("SnakeJson1.json");
     public static Json json = new Json();
     public static Json json1 = new Json();
     public static GamePlayScreenTetrisPlay gameJsonData;

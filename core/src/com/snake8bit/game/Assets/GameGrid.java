@@ -28,11 +28,11 @@ public class GameGrid {
                         CalignPosition(batch, GameAsset.BrickSprite72,x,y, GameConstant.MAIN_GAME_GRID_OFFSET,TransparentLo);
                     }
                 }
-                for (int x=0;x<GameConstant.SUB_GAME_GRID.x;x++){ // truc x
-                    for (int y=0;y<GameConstant.SUB_GAME_GRID.y;y++){ // truc y
-                        CalignPosition(batch, GameAsset.BrickSprite48,x,y, GameConstant.SUB_GAME_GRID_OFFSET,TransparentLo);
-                    }
-                }
+//                for (int x=0;x<GameConstant.SUB_GAME_GRID.x;x++){ // truc x
+//                    for (int y=0;y<GameConstant.SUB_GAME_GRID.y;y++){ // truc y
+//                        CalignPosition(batch, GameAsset.BrickSprite48,x,y, GameConstant.SUB_GAME_GRID_OFFSET,TransparentLo);
+//                    }
+//                }
                 break;
             case 2:
                 break;

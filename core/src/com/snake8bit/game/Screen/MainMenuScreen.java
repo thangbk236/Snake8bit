@@ -55,23 +55,7 @@ public class MainMenuScreen implements Screen {
             if (timeToShowAds>3.0f){//sau 3s thi cho hien thi ads
                 if (!timeToShowAdsLatch){
                     timeToShowAdsLatch=true;
-                    int i = MathUtils.random(1,5);
-                    if (i==5) {
-                        Snake8bit.playservices.showBannerAd();
-                    }
-                    else {
-                        if(i==2||i==4){
-                            Snake8bit.playservices.showInterstitialAd(new Runnable() {
-                                @Override
-                                public void run() {
-                                    //Gdx.app.exit();
-                                }
-                            });
-                        }
-                        else {
-                            Snake8bit.playservices.showRewardedVideoAd();
-                        }
-                    }
+                    Snake8bit.playservices.showAds();
                 }
             }
         }
